@@ -1,16 +1,16 @@
 pipeline {
     agent any
 
-    stage {
+    stages {
         stage ('build') {
-        steps {
-            echo 'hello'
+            steps {
+                echo 'hello'
+            }
         }
-    }
-    stage ('test') {
-        steps {
-            sh './vendor/bin/phpunit --log-junit test.xml -c phpunit.xml'
+        stage ('test') {
+            steps {
+                sh './vendor/bin/phpunit --log-junit test.xml -c phpunit.xml'
+            }
         }
-    }
     }
 }
