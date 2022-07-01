@@ -1,7 +1,8 @@
 pipeline {
     agent any
 
-    stage ('build') {
+    stage {
+        stage ('build') {
         steps {
             echo 'hello'
         }
@@ -10,5 +11,6 @@ pipeline {
         steps {
             sh './vendor/bin/phpunit --log-junit test.xml -c phpunit.xml'
         }
+    }
     }
 }
